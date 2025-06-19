@@ -25,7 +25,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
 
   void _checkAuth() {
     if (!_isSignedIn) {
-      throw AuthException("You must be logged in to access this resource.");
+      throw AuthException('You must be logged in to access this resource.');
     }
   }
 

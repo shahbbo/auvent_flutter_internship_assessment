@@ -20,7 +20,7 @@ class AuthState extends Equatable {
   });
 
   factory AuthState.initial() {
-    return AuthState(
+    return const AuthState(
       formType: AuthFormType.login,
       isAuthenticated: false,
       isLoading: false,
@@ -44,5 +44,6 @@ class AuthState extends Equatable {
   }
 
   @override
-  List<Object?> get props => [formType, isLoading, isAuthenticated, user, errorMessage];
+  List<Object?> get props =>
+      [formType, isLoading, isAuthenticated, user, errorMessage];
 }

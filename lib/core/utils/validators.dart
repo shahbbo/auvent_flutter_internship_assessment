@@ -3,7 +3,7 @@ class Validators {
   static String? validateEmail(String? value) {
     if (value == null || value.isEmpty) return 'Enter your email please';
 
-    const pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+    const pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$';
     return RegExp(pattern).hasMatch(value) ? null : 'Invalid email';
   }
 
@@ -31,13 +31,13 @@ class Validators {
   }
 
   static String? validateUserName(String? value) {
-    RegExp usernameRegex = RegExp(r"^[a-zA-Z\s]+$");
+    RegExp usernameRegex = RegExp(r'^[a-zA-Z\s]+$');
     if (value == null || value.trim().isEmpty) {
-      return "Please enter your name.";
+      return 'Please enter your name.';
     } else if (value.trim().length < 3) {
-      return "Name must be at least 3 characters long.";
+      return 'Name must be at least 3 characters long.';
     } else if (!usernameRegex.hasMatch(value)) {
-      return "Name can only contain letters and spaces.";
+      return 'Name can only contain letters and spaces.';
     }
     return null;
   }
@@ -53,16 +53,16 @@ class Validators {
   static String? validatePhoneNumber(String? phoneNumber) {
     final RegExp phoneRegExp = RegExp(r'^\+20(10|11|12|15)\d{8}$');
     if (phoneNumber == null || phoneNumber.isEmpty) {
-      return "Please enter your phone number.";
+      return 'Please enter your phone number.';
     } else if (!phoneRegExp.hasMatch(phoneNumber)) {
-      return "Invalid phone number format. Use +201xxxxxxx.";
+      return 'Invalid phone number format. Use +201xxxxxxx.';
     }
     return null; // Valid case
   }
 
   static String? validateSelectedImage(int? selectedImage) {
     if (selectedImage == null || selectedImage.isNegative) {
-      return "Please select a profile image.";
+      return 'Please select a profile image.';
     }
     return null;
   }

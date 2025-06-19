@@ -13,7 +13,7 @@ class OnBoarding extends StatefulWidget {
   const OnBoarding({super.key});
 
   static Widget builder(BuildContext context) {
-    return OnBoarding();
+    return const OnBoarding();
   }
 
   @override
@@ -92,7 +92,7 @@ class _OnBoardingState extends State<OnBoarding>
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0XFFFFFFFF),
+        backgroundColor: const Color(0XFFFFFFFF),
         body: Column(
           children: [
             Expanded(

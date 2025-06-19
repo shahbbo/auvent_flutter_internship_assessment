@@ -21,10 +21,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     required this.getServicesUseCase,
     required this.getAdsUseCase,
     required this.getRestaurantsUseCase,
-  }) : super(HomeState()) {
+  }) : super(const HomeState()) {
     on<HomeInitialEvent>((event, emit) {
       // Initial state setup if needed
-      emit(HomeState());
+      emit(const HomeState());
       add(LoadHomeDataEvent());
     });
     on<BottomNavTappedEvent>(_bottomNavTapped);

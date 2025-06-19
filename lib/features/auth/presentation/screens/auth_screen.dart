@@ -20,7 +20,7 @@ class AuthScreen extends StatelessWidget {
   static Widget builder(BuildContext context) {
     return BlocProvider(
       create: (_) => sl<AuthBloc>(),
-      child: AuthScreen(),
+      child: const AuthScreen(),
     );
   }
 

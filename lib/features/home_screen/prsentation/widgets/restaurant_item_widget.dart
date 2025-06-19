@@ -109,7 +109,7 @@ Widget buildShimmerRestaurants() {
                     Container(
                       width: 10.h,
                       height: 10.h,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.white,
                         shape: BoxShape.circle,
                       ),

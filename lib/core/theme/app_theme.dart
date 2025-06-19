@@ -43,31 +43,31 @@ class AppTheme {
 }
 
 class ColorSchemes {
-  static final lightCodeColorScheme = ColorScheme.light();
+  static final lightCodeColorScheme = const ColorScheme.light();
 }
 
 class LightCodeColors {
   // App Colors
-  Color get black => Color(0xFF1E1E1E);
-  Color get white => Color(0xFFFFFFFF);
+  Color get black => const Color(0xFF1E1E1E);
+  Color get white => const Color(0xFFFFFFFF);
 
   // Additional Colors
   Color get whiteCustom => Colors.white;
   Color get blackCustom => Colors.black;
   Color get transparentCustom => Colors.transparent;
   Color get greyCustom => Colors.grey;
-  Color get colorFF8900 => Color(0xFF8900FE);
-  Color get colorFFFFDE => Color(0xFFFFDE59);
-  Color get colorFFF9F9 => Color(0xFFF9F9F9);
-  Color get colorFFD9D9 => Color(0xFFD9D9D9);
-  Color get colorFFF5F6 => Color(0xFFF5F6F7);
-  Color get colorFF474B => Color(0xFF474B51);
-  Color get color33C4C4C4 => Color(0x33C4C4C4);
-  Color get color4D000000 => Color(0x4D000000);
-  Color get colorFF677294B => Color(0xFF677294);
-  Color get colorFF1E1E => Color(0xFF1E1E1E);
-  Color get colorFFF5F5 => Color(0xFFF5F5F5);
-  Color get colorFFFFEE => Color(0xFFFFEEE6);
+  Color get colorFF8900 => const Color(0xFF8900FE);
+  Color get colorFFFFDE => const Color(0xFFFFDE59);
+  Color get colorFFF9F9 => const Color(0xFFF9F9F9);
+  Color get colorFFD9D9 => const Color(0xFFD9D9D9);
+  Color get colorFFF5F6 => const Color(0xFFF5F6F7);
+  Color get colorFF474B => const Color(0xFF474B51);
+  Color get color33C4C4C4 => const Color(0x33C4C4C4);
+  Color get color4D000000 => const Color(0x4D000000);
+  Color get colorFF677294B => const Color(0xFF677294);
+  Color get colorFF1E1E => const Color(0xFF1E1E1E);
+  Color get colorFFF5F5 => const Color(0xFFF5F5F5);
+  Color get colorFFFFEE => const Color(0xFFFFEEE6);
 
   // Color Shades - Each shade has its own dedicated constant
   Color get grey200 => Colors.grey.shade200;
