@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "811448609722",
+    "project_id": "auvnetinternshipassessment",
+    "storage_bucket": "auvnetinternshipassessment.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:811448609722:android:2b1ac9523129005adf4b83",
+        "android_client_info": {
+          "package_name": "com.example.auvent_flutter_internship_assessment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQgoOqr9kkxi5L3hPnNJngo_hS7p2gc10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
