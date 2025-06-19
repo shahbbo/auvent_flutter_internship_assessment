@@ -24,8 +24,6 @@ class HomeRepositoryImpl implements HomeRepository {
       try {
         final remoteServices = await remoteDataSource.getServices();
         await localDataSource.cacheServices(remoteServices);
-        print("Remote Services: $remoteServices");
-        print("Local Services: ${localDataSource.getCachedServices()}");
         return Right(remoteServices);
       } on Exception catch (e) {
         return _handleException(e);
@@ -46,8 +44,6 @@ class HomeRepositoryImpl implements HomeRepository {
       try {
         final remoteAds = await remoteDataSource.getAds();
         await localDataSource.cacheAds(remoteAds);
-        print("Remote Ads: $remoteAds");
-        print("Local Ads: ${localDataSource.getCachedAds()}");
         return Right(remoteAds);
       } on Exception catch (e) {
         return _handleException(e);
@@ -68,8 +64,6 @@ class HomeRepositoryImpl implements HomeRepository {
       try {
         final remoteRestaurants = await remoteDataSource.getRestaurants();
         await localDataSource.cacheRestaurants(remoteRestaurants);
-        print('remoteRestaurants $remoteRestaurants');
-        print("localRestaurants ${localDataSource.getCachedRestaurants()}");
         return Right(remoteRestaurants);
       } on Exception catch (e) {
         return _handleException(e);

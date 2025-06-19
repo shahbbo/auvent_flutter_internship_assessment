@@ -29,38 +29,15 @@ class ShortcutItemWidget extends StatelessWidget {
             alignment: Alignment.center,
             children: [
               CustomImageView(
-                imagePath: shortcut.image ?? '',
-                /*height: shortcut.image?.contains('security_vault') == true ||
-                        shortcut.image?.contains('group_34') == true
-                    ? 49.h
-                    : 40.h,
-                width: shortcut.image?.contains('security_vault') == true
-                    ? 50.h
-                    : shortcut.image?.contains('group_34') == true
-                        ? 39.h
-                        : 40.h,*/
+                imagePath: shortcut.image,
                 fit: BoxFit.contain,
               ),
-              /* if (shortcut.hasOverlay ?? false)
-                Positioned(
-                  top: shortcut.image?.contains('group_34') == true
-                      ? 17.h
-                      : 16.h,
-                  left: shortcut.image?.contains('group_34') == true
-                      ? 21.h
-                      : 20.h,
-                  child: Text(
-                    shortcut.overlayText ?? '',
-                    style: AppTextStyle.instance.headline24BrunoAce
-                        .copyWith(height: 1.21),
-                  ),
-                ),*/
             ],
           ),
         ),
         SizedBox(height: 8.h),
         Text(
-          shortcut.name ?? '',
+          shortcut.name,
           textAlign: TextAlign.center,
           style: AppTextStyle.instance.body12MediumDMSans.copyWith(
             color: appTheme.blackCustom,

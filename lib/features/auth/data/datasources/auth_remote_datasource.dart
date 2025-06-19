@@ -74,7 +74,6 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         );
       }
     } on firebase_auth.FirebaseAuthException catch (e) {
-      print('FirebaseAuthException in datasource: ${e.code}');
       if (e.code == 'weak-password') {
         throw AuthException('The password provided is too weak.');
       } else if (e.code == 'email-already-in-use') {

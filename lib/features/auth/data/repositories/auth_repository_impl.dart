@@ -22,21 +22,17 @@ class AuthRepositoryImpl implements AuthRepository {
         final userModel = await remoteDataSource.login(email, password);
         return Right(userModel);
       } on AuthException catch (e) {
-        print("e.message inrepo ${e.message}");
         return Left(AuthFailure(e.message));
       } on ServerException {
-        print("ServerException in repo");
         return Left(ServerFailure(
           'Server error occurred while logging in.',
         ));
       } on NetworkException {
-        print("NetworkException in repo");
         return Left(NetworkFailure(
           'Network error occurred while logging in.',
         ));
       }
     } else {
-      print("No internet connection in repo");
       return Left(NetworkFailure(
         'No internet connection. Please check your network settings.',
       ));

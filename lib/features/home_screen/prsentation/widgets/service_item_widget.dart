@@ -50,7 +50,7 @@ class ServiceItemWidget extends StatelessWidget {
         ),
         SizedBox(height: 2.h),
         Text(
-          service.name ?? '',
+          service.name,
           textAlign: TextAlign.center,
           style: AppTextStyle.instance.bodyTextMediumDMSans.copyWith(
             color: appTheme.blackCustom,
@@ -70,7 +70,7 @@ Widget buildShimmerServices() {
       child: Row(
         children: List.generate(
           4,
-              (index) => Padding(
+          (index) => Padding(
             padding: EdgeInsets.only(right: index < 3 ? 16.w : 0),
             child: Column(
               children: [

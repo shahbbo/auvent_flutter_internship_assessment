@@ -32,24 +32,7 @@ class RestaurantItemWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(10.h),
             child: Center(
               child: CustomImageView(
-                imagePath: restaurant.image ?? '',
-                // height: restaurant.image?.contains('logo637749035515703697') ==
-                //         true
-                //     ? 54.h
-                //     : restaurant.image?.contains('logo4637357125093900864') ==
-                //             true
-                //         ? 53.h
-                //         : restaurant.image?.contains('img_1') == true
-                //             ? 55.h
-                //             : 70.h,
-                // width: restaurant.image?.contains('logo637749035515703697') ==
-                //         true
-                //     ? 80.h
-                //     : restaurant.image?.contains('logo4637357125093900864') ==
-                //                 true ||
-                //             restaurant.image?.contains('img_1') == true
-                //         ? 70.h
-                //         : 70.h,
+                imagePath: restaurant.image,
                 fit: BoxFit.cover,
               ),
             ),
@@ -59,7 +42,7 @@ class RestaurantItemWidget extends StatelessWidget {
         SizedBox(
           width: 84.h,
           child: Text(
-            restaurant.name ?? '',
+            restaurant.name,
             textAlign: TextAlign.center,
             style: AppTextStyle.instance.body12MediumDMSans.copyWith(
               color: appTheme.blackCustom,
