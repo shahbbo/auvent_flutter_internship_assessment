@@ -3,6 +3,7 @@ import 'package:auvent_flutter_internship_assessment/core/widgets/custom_button.
 import 'package:auvent_flutter_internship_assessment/core/widgets/custom_image_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive/hive.dart';
 
 import '../../core/routes/app_routes.dart';
 import '../../core/routes/navigator_service.dart';
@@ -66,6 +67,11 @@ class _OnBoardingState extends State<OnBoarding>
     super.dispose();
   }
 
+  void saveOnboarding() async {
+    var settingsBox = await Hive.openBox('settings');
+    await settingsBox.put('onboarding', true);
+  }
+
   void _nextPage() async {
     await _controller.forward();
 
@@ -73,6 +79,7 @@ class _OnBoardingState extends State<OnBoarding>
       if (currentPage < onboardingData.length - 1) {
         currentPage++;
       } else {
+        saveOnboarding();
         NavigatorService.pushNamedAndRemoveUntil(AppRoutes.authScreen);
         return;
       }
@@ -145,6 +152,7 @@ class _OnBoardingState extends State<OnBoarding>
     return CustomButton(
       text: 'Get Started',
       onPressed: () {
+        saveOnboarding();
         NavigatorService.pushNamedAndRemoveUntil(AppRoutes.authScreen);
       },
     );

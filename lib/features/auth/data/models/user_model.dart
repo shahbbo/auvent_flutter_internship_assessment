@@ -1,10 +1,19 @@
+import 'package:hive/hive.dart';
 import '../../domain/entities/user_entity.dart';
 
+part 'user_model.g.dart';
+
+@HiveType(typeId: 1)
 class UserModel extends User {
+  @HiveField(0)
+  final String id;
+  @HiveField(1)
+  final String email;
+
   const UserModel({
-    required super.id,
-    required super.email,
-  });
+    required this.id,
+    required this.email,
+  }) : super(id: id, email: email);
 
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
