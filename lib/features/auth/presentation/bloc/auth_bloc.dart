@@ -32,18 +32,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     result.fold(
       (failure) {
-        if (failure is AuthFailure) {
-          emit(state.copyWith(
-            isLoading: false,
-            errorMessage: failure.message,
-          ));
-        } else {
-          emit(state.copyWith(
-            isLoading: false,
-            errorMessage:
-                'Failed to login. Please check your connection and try again.',
-          ));
-        }
+        emit(state.copyWith(
+          isLoading: false,
+          errorMessage: failure.message,
+        ));
       },
       (user) => emit(state.copyWith(
         isLoading: false,
@@ -61,18 +53,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
     result.fold(
       (failure) {
-        if (failure is AuthFailure) {
-          emit(state.copyWith(
-            isLoading: false,
-            errorMessage: failure.message,
-          ));
-        } else {
-          emit(state.copyWith(
-            isLoading: false,
-            errorMessage:
-                'Failed to create account. Please check your connection and try again.',
-          ));
-        }
+        emit(state.copyWith(
+          isLoading: false,
+          errorMessage: failure.message,
+        ));
       },
       (user) => emit(state.copyWith(
         isLoading: false,

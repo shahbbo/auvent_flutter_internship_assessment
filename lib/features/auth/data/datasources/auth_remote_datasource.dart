@@ -41,6 +41,8 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         throw AuthException('The email address is not valid.');
       } else if (e.code == 'user-disabled') {
         throw AuthException('This user has been disabled.');
+      } else if (e.code == 'invalid-credential') {
+        throw AuthException('mail or password is incorrect.');
       } else {
         throw ServerException(
           'An error occurred while logging in. Please try again later.',
@@ -72,12 +74,15 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         );
       }
     } on firebase_auth.FirebaseAuthException catch (e) {
+      print('FirebaseAuthException in datasource: ${e.code}');
       if (e.code == 'weak-password') {
         throw AuthException('The password provided is too weak.');
       } else if (e.code == 'email-already-in-use') {
         throw AuthException('The account already exists for that email.');
       } else if (e.code == 'invalid-email') {
         throw AuthException('The email address is not valid.');
+      } else if (e.code == 'invalid-credential') {
+        throw AuthException('mail or password is not valid.');
       } else {
         throw ServerException(
           'An error occurred while signing up. Please try again later.',
